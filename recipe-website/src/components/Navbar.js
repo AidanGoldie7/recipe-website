@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
         <nav>
-            <Link to="/">
+            <Link className="brand" to="/">
             <h1>Aidans Kitchen</h1>
             </Link> 
 

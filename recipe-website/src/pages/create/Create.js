@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 
 //styles 
 import './Create.css'
@@ -8,12 +8,33 @@ export default function Create() {
   const [title, setTitle] = useState('')
   const [method, setMethod] = useState('')
   const [cookingTime, setCookingTime] = useState('')
+  const [newIngredient, setNewIngredient] = useState('')
+  const [ingredients, setIngredients] = useState([])
+  const ingredientInput = useRef(null)
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(title, method, cookingTime)
+    console.log(title, ingredients, method, cookingTime)
   }
+
+
+  //When Add button is clicked
+  const handleAdd = (e) => {
+    e.preventDefault()
+    const ing = newIngredient.trim()
+
+    //making ingredients unique, cant enter same ingredient twice
+    if (ing && !ingredients.includes(ing)) {
+      setIngredients(prevIngredients => [...prevIngredients, ing])
+    }
+    setNewIngredient('')
+
+    //focus allows for the ingredient box to have the cursor in it after 
+    //user adds an ingredient, for quicker adding of ingredients
+    ingredientInput.current.focus()
+  }
+
 
   return (
     <div className='create'>
@@ -32,7 +53,21 @@ export default function Create() {
             />
           </label>
 
-          
+
+          <label>
+            <span>Recipe Ingredients:</span>
+            <div className="ingredients">
+              <input type="text"
+              onChange={(e) => setNewIngredient(e.target.value)}
+              value={newIngredient}
+              ref={ingredientInput} />
+              <button onClick={handleAdd} className='btn'>add</button>
+            </div>
+          </label>
+
+          {/*Displaying all Ingredients*/}
+          <p>Current Ingredients: {ingredients.map(ingredient => <em key={ingredient}>{ingredient}, </em>)}</p>
+
 
           <label>
             <span>Recipe Method:</span>

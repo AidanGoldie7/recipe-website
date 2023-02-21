@@ -38,24 +38,14 @@
       "cookingTime": "35 minutes"
     },
     {
-      "title": "domiinoes",
+      "title": "Aidan",
       "ingredients": [
-        "leeks",
-        "tofu",
-        "ddd"
+        "Mush",
+        "Onion"
       ],
-      "method": "dfdfdfdf",
-      "cookingTime": "45 minutes",
-      "id": "F4WvRC-"
-    },
-    {
-      "title": "Chickpea Curry",
-      "ingredients": [
-        "Chickpeas"
-      ],
-      "method": "yes yes yes",
-      "cookingTime": "55 minutes",
-      "id": "dI6nIUV"
+      "method": "Take an onion",
+      "cookingTime": "30 minutes",
+      "id": "b9YG6p3"
     }
   ]
 }

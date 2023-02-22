@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from '../hooks/useTheme'
 
 //styles
 import './RecipeList.css'
 
 
 export default function RecipeList({recipes}) {
+  const { mode } = useTheme()
 
   if (recipes.length === 0) {
     return <div className='error'>No recipes found.</div>
@@ -16,7 +18,7 @@ export default function RecipeList({recipes}) {
   return (
     <div className='recipe-list'>
         {recipes.map(recipe => (
-            <div key={recipe.id} className="card"> 
+            <div key={recipe.id} className={`card ${mode}`}> 
             <h3>{recipe.title}</h3>
             <p>{recipe.cookingTime} to make</p>
             <div>{recipe.method.substring(0, 100)}...</div>

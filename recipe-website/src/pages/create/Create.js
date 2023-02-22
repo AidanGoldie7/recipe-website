@@ -105,6 +105,7 @@ export default function Create() {
           </label>
 
 
+          {/*add an onClick here to handle deleting items from the database*/}
           <button className='btn'>Submit</button>
         </form>
 

@@ -46,6 +46,17 @@
       "method": "Take an onion",
       "cookingTime": "30 minutes",
       "id": "b9YG6p3"
+    },
+    {
+      "title": "Coding",
+      "ingredients": [
+        "React",
+        "Java",
+        "Python"
+      ],
+      "method": "This is ",
+      "cookingTime": "55 minutes",
+      "id": "lNvX0WC"
     }
   ]
 }

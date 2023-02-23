@@ -18,6 +18,7 @@ export default function Home() {
   useEffect(() => {
     setIsPending(true)
 
+    
     //connect to certain collection from firestore firebase
     projectFirestore.collection('recipes').get().then((snapshot) => {
       if (snapshot.empty){

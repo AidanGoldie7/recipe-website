@@ -1,8 +1,12 @@
+import { projectFirestore } from '../firebase/config'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../hooks/useTheme'
+import DeleteIcon from '../assets/delete.svg'
+
 
 //styles
 import './RecipeList.css'
+
 
 
 export default function RecipeList({recipes}) {
@@ -13,6 +17,10 @@ export default function RecipeList({recipes}) {
     
   }
 
+  //handleClick for Deleting an item from Home Page
+  const handleClick = (id) => {
+    projectFirestore.collection('recipes').doc(id).delete()
+  }
 
 
   return (
@@ -23,6 +31,11 @@ export default function RecipeList({recipes}) {
             <p>{recipe.cookingTime} to make</p>
             <div>{recipe.method.substring(0, 100)}...</div>
             <Link to={`/recipes/${recipe.id}`}>Cook This</Link>
+            <img 
+            className='delete'
+            src={DeleteIcon}
+            onClick={() => handleClick(recipe.id)}  
+            />
             </div>
         )) }
         

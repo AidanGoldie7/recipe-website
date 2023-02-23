@@ -1,7 +1,6 @@
 .navbar {
-    background: #a9f5c9;
     padding: 20px;
-    color: #8c00ff;
+    color: #ffffff;
 }
 
 .navbar nav {
@@ -13,15 +12,15 @@
 
 .navbar a.brand {
     margin-right: auto;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .navbar a:last-child {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     margin-left: 40px;
     padding: 8px;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     border-radius: 4px;
 }

@@ -20,5 +20,5 @@ firebase.initializeApp(firebaseConfig)
 const projectFirestore = firebase.firestore()
 
 
-//export to be used in other locations within the project
+//export so firebase can be used in other locations/components within the project
 export {projectFirestore}
